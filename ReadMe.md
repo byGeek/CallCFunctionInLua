@@ -49,7 +49,7 @@ So the first is the function name which will be used in lua, and the second is t
 
   This function name should be match pattern `luaopen_dllname`, dllname is your dll's name
 
-- Use this c library in your lua code.
+- Final step, Use this c library in your lua code.
 
   ```lua
   -- test.lua
@@ -62,4 +62,6 @@ So the first is the function name which will be used in lua, and the second is t
 
   Note that the module name is **case sensitive** because internally lua interpreter will call `luaopen_Modulename` function which exported by your c library.
 
-- La
+
+
+Another note, you should export those symbols in c lib mentioned in the first three step and use `extern "C" `to make it follow the C standard if you are using c++.
